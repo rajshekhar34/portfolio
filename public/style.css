@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    background-color: rgb(31 41 55);
+    color: white;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+.smily {
+    display: none;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 270px){
+    .body {
+        display: none;
+    }
+
+    .smily {
+        display: block;
+    }
+}
+
+

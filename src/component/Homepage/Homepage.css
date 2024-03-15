@@ -1,0 +1,182 @@
+.main {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(31 41 55);
+    color: #fff;
+    height: calc(100vh - 5rem);
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+.container {
+    height: calc(100% - 5rem);
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    
+}
+
+
+.animated-text {
+    font-size: 34px;
+    font-weight: 600;
+    transition: 0.5s;
+    position: absolute;
+    width: 90%;
+    margin: 0 auto;
+    max-height: 70%;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+
+
+
+.image {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+    margin-left: 50px;
+    border-radius: 2rem;
+    border: 10px solid rgb(255, 255, 255);
+    transition: 0.8s;
+}
+
+.image:hover {
+    scale: 99%;
+}
+
+
+
+.myName::before {
+    content: "Raj.";
+    color: rgb(253, 138, 36);
+}
+
+
+
+.animated-text .myName,.animated-text .firstLine {
+    position: relative;
+}
+
+.animated-text .firstLine::before {
+    content: "My Portfolio.";
+    color: #EC8143
+}
+
+.animated-text .firstLine::after,.animated-text .myName::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 9px);
+    background-color: rgb(31 41 55);
+    border-left: 2px solid rgb(31 41 55);
+    right: -8px;
+    animation: typingPortfolio 1s steps(12);
+    animation-fill-mode: forwards;
+}
+
+
+.animated-text .secondLine {
+    position: relative;
+}
+
+
+.animated-text .secondLine::before {
+    content: "HTML";
+    color: rgb(253, 138, 36);
+    animation: words 15s infinite;
+}
+
+.animated-text .secondLine::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 9px);
+    background-color: rgb(31 41 55);
+    border-left: 2px solid orange;
+    right: -3px;
+    animation: cursor 0.8s infinite, typing 15s steps(28) infinite;
+}
+
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid rgb(31 41 55);
+    }
+}
+
+@keyframes words{
+    0%,20% {
+        content: "HTML"
+    }
+    21%,40% {
+        content: "CSS"
+    }
+    41%,60% {
+        content: "JavaScript"
+    }
+    61%,80% {
+        content: "Tailwind"
+    }
+    81%,100% {
+        content: "React"
+    }
+}
+
+
+@keyframes typingPortfolio {
+    100%  {width: 0;}
+    50% {width: calc(100% + 8px)}
+}
+
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%   {width: 0;}
+    5%,20%,25%,40%,45%,60%,65%,80%,85% {width: calc(100% + 8px)}
+}
+
+
+@media (max-width: 1100px) {
+    .image {
+        display: none;
+    }
+.container {
+    width: calc(100vw - 10%);
+}
+
+}
+
+@media (max-width: 550px) {
+   .main {
+    width: 100%;
+   }
+
+   .animated-text{
+    height: 100%;
+    font-size: 20px;
+   }
+
+}
+
+
+@media (max-width: 400px) and (max-height: 750px){
+    .container {
+        height: 90%;
+        width: calc(100vw - 10%);
+    }
+
+    .animated-text{
+        scale: 75%;
+        top: 30%;
+        left: 40%;
+    }
+
+}
